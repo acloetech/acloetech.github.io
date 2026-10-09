@@ -2,37 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Acloe Games</title>
-  <meta name="description" content="Small, calm puzzle games with no forced ads.">
-  <link rel="icon" type="image/png" href="assets/coronet.png">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Acloe Games · Small, calm puzzle games</title>
+  <meta name="description" content="Small, calm puzzle games for iPhone, iPad and Android: Knotty, Popblock, Branchline and Coronet. Clean design, a fresh puzzle every day, and no ads you didn't ask for.">
+  <link rel="canonical" href="https://games.acloe.com/">
+  <meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="/knotty/assets/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Acloe Games">
+  <meta property="og:title" content="Acloe Games · Small, calm puzzle games">
+  <meta property="og:description" content="Clean design, a fresh puzzle every day, and no ads you didn't ask for.">
+  <meta property="og:url" content="https://games.acloe.com/">
+  <meta property="og:image" content="https://games.acloe.com/knotty/assets/og.jpg">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <div class="wrap">
-  <header class="bar"><a class="brand" href="./">Acloe Games</a></header>
+  <header class="bar">
+    <a class="brand" href="/">Acloe Games</a>
+    <nav class="nav"><a href="/" aria-current="page">Games</a><a href="/privacy.html">Privacy</a></nav>
+  </header>
+
   <main>
-    <h1>Small, calm puzzle games.</h1>
-    <p class="muted">Clean design, a fresh puzzle every day, and no ads you didn't ask for.</p>
+    <h1>Small, calm<br>puzzle games.</h1>
+    <p class="lede">Clean design, a fresh puzzle every day, and no ads you didn't ask for.</p>
+
     <div class="games">
-      <a class="card game" href="knotty/">
-        <img src="knotty/assets/icon.png" alt="">
-        <div><h3>Knotty</h3><p>Draw one line through every number and fill the grid. A fresh puzzle every day.</p></div>
+      <a class="card game" href="/knotty/">
+        <img src="/knotty/assets/icon.png" alt="" width="76" height="76">
+        <div>
+          <h3>Knotty</h3>
+          <p>Draw one line through every number and fill the grid. A fresh knot every day.</p>
+          <span class="status live">On the App Store and Google Play →</span>
+        </div>
       </a>
       <div class="card game">
-        <img src="assets/coronet.png" alt="">
-        <div><h3>Coronet</h3><p>Place one crown in every row, column and colour, with no two touching. Every puzzle solvable by reasoning alone.</p></div>
+        <img src="/assets/popblock.png" alt="" width="76" height="76">
+        <div>
+          <h3>Popblock</h3>
+          <p>Drag blocks, fill lines, watch them pop. Gems, ice and popcorn in 60 levels.</p>
+          <span class="status">Coming soon</span>
+        </div>
       </div>
       <div class="card game">
-        <img src="assets/branchline.png" alt="">
-        <div><h3>Branchline</h3><p>Flip the switches and send every train to the station of its colour, as the line gets busier.</p></div>
+        <img src="/assets/branchline.png" alt="" width="76" height="76">
+        <div>
+          <h3>Branchline</h3>
+          <p>Flip the switches and send every train to the station of its colour, as the line gets busier.</p>
+          <span class="status">Coming soon</span>
+        </div>
+      </div>
+      <div class="card game">
+        <img src="/assets/coronet.png" alt="" width="76" height="76">
+        <div>
+          <h3>Coronet</h3>
+          <p>One crown in every row, column and colour, with no two touching. A fresh logic puzzle every day.</p>
+          <span class="status">Coming soon</span>
+        </div>
       </div>
     </div>
   </main>
+
   <footer>
     © 2026 Acloe Technology Ventures ·
-    <a href="privacy.html">Privacy policy</a> ·
-    <a href="delete-account.html">Delete your account</a>
+    <a href="/privacy.html">Privacy policy</a> ·
+    <a href="/delete-account.html">Delete your account</a>
   </footer>
 </div>
 </body>
