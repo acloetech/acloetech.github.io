@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get Knotty</title>
+  <!-- A short link for QR codes and ads: straight to this device's store.
+       The page to share and index is /knotty/. -->
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://games.acloe.com/knotty/">
+  <script>
+    (function () {
+      var ua = navigator.userAgent || "";
+      var android = /Android/i.test(ua);
+      // iPads ask for desktop sites and say "Macintosh"; touch gives them away.
+      var ios = !android && (/iPhone|iPad|iPod/.test(ua) ||
+        (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1));
+      var to = android
+        ? "https://play.google.com/store/apps/details?id=com.knotty&referrer=utm_source%3Dgames.acloe.com%26utm_medium%3Dlink%26utm_campaign%3Dknotty_get"
+        : ios
+          ? "https://apps.apple.com/app/id6817938278"
+          : "../";
+      location.replace(to);
+    })();
+  </script>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #F6F1E7; color: #1F1B16;
+      font: 17px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; text-align: center; padding: 16px; }
+    @media (prefers-color-scheme: dark) { body { background: #121212; color: #EDEDED; } }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <p>Opening the store…<br>
+    <a href="https://apps.apple.com/app/id6817938278">App Store</a> ·
+    <a href="https://play.google.com/store/apps/details?id=com.knotty">Google Play</a> ·
+    <a href="../">About Knotty</a>
+  </p>
+</body>
+</html>
