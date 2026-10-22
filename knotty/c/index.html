@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Can you beat my Knotty time?</title>
+  <!-- A friend's shared daily result (?d=daily&t=seconds&s=stars&n=name),
+       inviting the reader to beat it. Not indexed: /knotty/ is the page
+       search engines rank. -->
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://games.acloe.com/knotty/">
+  <meta name="description" content="A friend solved today's Knotty. Same puzzle for everyone: can you beat their time? Free on iPhone, iPad and Android.">
+  <meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="/knotty/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/knotty/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Acloe Games">
+  <meta property="og:title" content="Can you beat my Knotty time?">
+  <meta property="og:description" content="One line. Every number. Every cell. Same puzzle for everyone, every day. Free on iPhone and Android.">
+  <meta property="og:image" content="https://games.acloe.com/knotty/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/style.css?v=2">
+  <style>
+    .challenge { max-width: 560px; margin: 8px auto 0; text-align: center; }
+    .challenge .app { justify-content: center; }
+    .challenge h1 { font-size: clamp(34px, 7vw, 52px); margin: 18px 0 12px; }
+    .time { color: var(--link); white-space: nowrap; }
+    .stars { color: #D99A0B; letter-spacing: 2px; }
+    .challenge .badges, .challenge .qr { justify-content: center; margin-left: auto; margin-right: auto; }
+    .challenge .install { min-width: 260px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <a class="brand" href="/">Acloe Games</a>
+    <nav class="nav"><a href="/knotty/">Knotty</a><a href="/">Games</a></nav>
+  </header>
+
+  <main class="challenge">
+    <div class="app">
+      <img src="/knotty/assets/icon.png" alt="Knotty app icon" width="72" height="72">
+      <div style="text-align:left">
+        <div class="name">Knotty</div>
+        <div class="by">Daily Line Puzzle</div>
+      </div>
+    </div>
+
+    <h1 id="headline">Take on today’s Knotty</h1>
+    <p class="lede" id="lede" style="margin-left:auto;margin-right:auto">
+      Draw one line through every number and fill every cell. Everyone gets
+      the same puzzle each day, so you can compare times with friends.
+    </p>
+
+    <a class="install" id="install" href="/knotty/get/" target="_blank" rel="noopener">Install free</a>
+    <p class="free" id="free">Free on iPhone, iPad and Android.</p>
+
+    <div class="badges">
+      <a class="apple" href="https://apps.apple.com/app/id6817938278" target="_blank" rel="noopener" aria-label="Download Knotty on the App Store">
+        <img src="/knotty/assets/badge-app-store.svg" alt="Download on the App Store" width="156" height="52">
+      </a>
+      <a class="play" target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.knotty&amp;referrer=utm_source%3Dgames.acloe.com%26utm_medium%3Dshare%26utm_campaign%3Dknotty_challenge" aria-label="Get Knotty on Google Play">
+        <img src="/knotty/assets/badge-google-play.png" alt="Get it on Google Play" width="198" height="77">
+      </a>
+    </div>
+
+    <div class="qr">
+      <img src="/knotty/assets/qr.svg" alt="QR code for games.acloe.com/knotty/get" width="96" height="96">
+      <p><strong>On your computer?</strong>Scan with your phone's camera to play there.</p>
+    </div>
+
+    <p class="muted" style="margin-top:28px"><a href="/knotty/">What’s Knotty?</a></p>
+  </main>
+
+  <footer>
+© 2026 Acloe Games, a studio of Tuagye, Inc. ·
+    <a href="/knotty/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var d = parseInt(q.get("d"), 10);
+    var t = parseInt(q.get("t"), 10);
+    var s = Math.max(0, Math.min(3, parseInt(q.get("s"), 10) || 0));
+    var n = (q.get("n") || "").trim().slice(0, 24);
+
+    // A friend's result: "Evans solved Daily #282 in 1:34 ★★★".
+    if (d > 0 && t > 0) {
+      var clock = Math.floor(t / 60) + ":" + String(t % 60).padStart(2, "0");
+      var h = document.getElementById("headline");
+      h.textContent = "";
+      h.append((n || "A friend") + " solved Daily #" + d + " in ");
+      var time = document.createElement("span");
+      time.className = "time";
+      time.textContent = clock;
+      h.append(time);
+      if (s > 0) {
+        var st = document.createElement("span");
+        st.className = "stars";
+        st.textContent = " " + "★".repeat(s) + "☆".repeat(3 - s);
+        h.append(st);
+      }
+      document.getElementById("lede").textContent =
+        "Can you beat it? Knotty is a free daily line puzzle: draw one line " +
+        "through every number and fill every cell. Everyone gets the same " +
+        "puzzle each day.";
+      document.title = (n || "A friend") + " solved Knotty Daily #" + d + " in " + clock;
+    }
+
+    // The Install button goes straight to this device's store.
+    var ua = navigator.userAgent || "";
+    var android = /Android/i.test(ua);
+    var ios = !android && (/iPhone|iPad|iPod/.test(ua) ||
+      (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1));
+    var btn = document.getElementById("install");
+    var free = document.getElementById("free");
+    if (ios) {
+      btn.href = "https://apps.apple.com/app/id6817938278";
+      free.textContent = "Free on the App Store.";
+    } else if (android) {
+      btn.href = "https://play.google.com/store/apps/details?id=com.knotty&referrer=utm_source%3Dgames.acloe.com%26utm_medium%3Dshare%26utm_campaign%3Dknotty_challenge";
+      free.textContent = "Free on Google Play.";
+    } else {
+      document.body.classList.add("desktop");
+    }
+  })();
+</script>
+</body>
+</html>
